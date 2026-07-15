@@ -1,5 +1,17 @@
 import { supabase } from '../lib/supabaseClient'
 
+type Pick = {
+  id: number
+  sport: string
+  home: string
+  away: string
+  win_prob_home: number
+  draw_prob: number | null
+  win_prob_away: number
+  pick: string
+  match_date: string
+}
+
 export default async function Home() {
   const { data: picks, error } = await supabase
     .from('picks')
@@ -10,8 +22,9 @@ export default async function Home() {
     return <div className="p-8 text-red-600">Error cargando picks: {error.message}</div>
   }
 
-  const futbolPicks = picks.filter(function (p) { return p.sport === 'futbol' })
-  const mlbPicks = picks.filter(function (p) { return p.sport === 'mlb' })
+  const allPicks = picks as Pick[]
+  const futbolPicks = allPicks.filter(function (p) { return p.sport === 'futbol' })
+  const mlbPicks = allPicks.filter(function (p) { return p.sport === 'mlb' })
 
   return (
     <main className="min-h-screen bg-gray-950 text-white p-6 md:p-10">
@@ -32,7 +45,7 @@ export default async function Home() {
   )
 }
 
-function Section({ title, picks }) {
+function Section({ title, picks }: { title: string; picks: Pick[] }) {
   if (picks.length === 0) return null
 
   return (
