@@ -1,5 +1,7 @@
 import { supabase } from '../lib/supabaseClient'
 
+export const dynamic = 'force-dynamic'
+
 type Pick = {
   id: number
   sport: string
