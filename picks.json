@@ -4,113 +4,406 @@
       "date": "2026-07-17T01:00:00+00:00",
       "home": "Necaxa",
       "away": "Atlante FC",
-      "winProbHome": 35.5,
-      "drawProb": 31,
-      "winProbAway": 33.5,
+      "homeId": 2288,
+      "awayId": 2312,
+      "winProbHome": 46.1,
+      "drawProb": 24.3,
+      "winProbAway": 29.6,
       "pick": "Necaxa",
-      "sport": "futbol"
+      "extraHome": 4,
+      "extraAway": -13,
+      "sport": "futbol",
+      "detalles": {
+        "formaHome": [
+          "D",
+          "W",
+          "W",
+          "L"
+        ],
+        "formaAway": [
+          "D",
+          "D",
+          "D",
+          "L",
+          "L"
+        ],
+        "lesionesHome": 0,
+        "lesionesAway": 0,
+        "descansoBonusHome": 0,
+        "formaBonusHome": 4,
+        "formaBonusAway": -13,
+        "lesionesBonusHome": 0,
+        "lesionesBonusAway": 0
+      }
     },
     {
       "date": "2026-07-17T03:10:00+00:00",
       "home": "Club Tijuana",
       "away": "Tigres UANL",
-      "winProbHome": 38.2,
-      "drawProb": 29.2,
-      "winProbAway": 32.6,
+      "homeId": 2280,
+      "awayId": 2279,
+      "winProbHome": 47.8,
+      "drawProb": 23.3,
+      "winProbAway": 28.9,
       "pick": "Club Tijuana",
-      "sport": "futbol"
+      "extraHome": 35,
+      "extraAway": 8,
+      "sport": "futbol",
+      "detalles": {
+        "formaHome": [
+          "D",
+          "W",
+          "D",
+          "W",
+          "D"
+        ],
+        "formaAway": [
+          "D",
+          "L",
+          "W",
+          "W",
+          "W"
+        ],
+        "lesionesHome": 0,
+        "lesionesAway": 0,
+        "descansoBonusHome": 30,
+        "formaBonusHome": 5,
+        "formaBonusAway": 8,
+        "lesionesBonusHome": 0,
+        "lesionesBonusAway": 0
+      }
     },
     {
       "date": "2026-07-18T01:00:00+00:00",
       "home": "Leon",
       "away": "Atlas",
-      "winProbHome": 37.9,
-      "drawProb": 29.4,
-      "winProbAway": 32.7,
+      "homeId": 2289,
+      "awayId": 2283,
+      "winProbHome": 51.4,
+      "drawProb": 21.1,
+      "winProbAway": 27.5,
       "pick": "Leon",
-      "sport": "futbol"
+      "extraHome": 30,
+      "extraAway": -19,
+      "sport": "futbol",
+      "detalles": {
+        "formaHome": [
+          "W",
+          "W",
+          "L",
+          "L"
+        ],
+        "formaAway": [
+          "L",
+          "D",
+          "L",
+          "L",
+          "L"
+        ],
+        "lesionesHome": 0,
+        "lesionesAway": 0,
+        "descansoBonusHome": 30,
+        "formaBonusHome": 0,
+        "formaBonusAway": -19,
+        "lesionesBonusHome": 0,
+        "lesionesBonusAway": 0
+      }
     },
     {
       "date": "2026-07-18T01:00:00+00:00",
       "home": "Atletico San Luis",
       "away": "Cruz Azul",
-      "winProbHome": 25.9,
-      "drawProb": 18.9,
-      "winProbAway": 55.2,
-      "pick": "Cruz Azul",
-      "sport": "futbol"
+      "homeId": 2314,
+      "awayId": 2295,
+      "winProbHome": 48.8,
+      "drawProb": 22.7,
+      "winProbAway": 28.5,
+      "pick": "Atletico San Luis",
+      "extraHome": 38,
+      "extraAway": 5,
+      "sport": "futbol",
+      "detalles": {
+        "formaHome": [
+          "W",
+          "W",
+          "W",
+          "D",
+          "L"
+        ],
+        "formaAway": [
+          "D",
+          "W",
+          "D",
+          "W",
+          "D"
+        ],
+        "lesionesHome": 0,
+        "lesionesAway": 0,
+        "descansoBonusHome": 30,
+        "formaBonusHome": 8,
+        "formaBonusAway": 5,
+        "lesionesBonusHome": 0,
+        "lesionesBonusAway": 0
+      }
     },
     {
       "date": "2026-07-18T03:00:00+00:00",
       "home": "FC Juarez",
       "away": "Puebla",
-      "winProbHome": 55.1,
-      "drawProb": 18.9,
-      "winProbAway": 26,
+      "homeId": 2298,
+      "awayId": 2291,
+      "winProbHome": 44.1,
+      "drawProb": 25.5,
+      "winProbAway": 30.4,
       "pick": "FC Juarez",
-      "sport": "futbol"
+      "extraHome": 0,
+      "extraAway": -5,
+      "sport": "futbol",
+      "detalles": {
+        "formaHome": [
+          "D",
+          "W",
+          "D",
+          "W"
+        ],
+        "formaAway": [
+          "W",
+          "L",
+          "W",
+          "L",
+          "L"
+        ],
+        "lesionesHome": 0,
+        "lesionesAway": 0,
+        "descansoBonusHome": -8,
+        "formaBonusHome": 8,
+        "formaBonusAway": -5,
+        "lesionesBonusHome": 0,
+        "lesionesBonusAway": 0
+      }
     },
     {
       "date": "2026-07-18T23:00:00+00:00",
       "home": "U.N.A.M. - Pumas",
       "away": "CF Pachuca",
-      "winProbHome": 44.8,
-      "drawProb": 25.1,
-      "winProbAway": 30.1,
+      "homeId": 2286,
+      "awayId": 2292,
+      "winProbHome": 36.2,
+      "drawProb": 30.5,
+      "winProbAway": 33.3,
       "pick": "U.N.A.M. - Pumas",
-      "sport": "futbol"
+      "extraHome": -32,
+      "extraAway": 13,
+      "sport": "futbol",
+      "detalles": {
+        "formaHome": [
+          "L",
+          "W",
+          "L",
+          "D",
+          "W"
+        ],
+        "formaAway": [
+          "W",
+          "L",
+          "W",
+          "W",
+          "W"
+        ],
+        "lesionesHome": 0,
+        "lesionesAway": 0,
+        "descansoBonusHome": -30,
+        "formaBonusHome": -2,
+        "formaBonusAway": 13,
+        "lesionesBonusHome": 0,
+        "lesionesBonusAway": 0
+      }
     },
     {
       "date": "2026-07-19T01:05:00+00:00",
       "home": "Monterrey",
       "away": "Santos Laguna",
-      "winProbHome": 53.2,
-      "drawProb": 20,
-      "winProbAway": 26.7,
+      "homeId": 2282,
+      "awayId": 2285,
+      "winProbHome": 42.2,
+      "drawProb": 26.7,
+      "winProbAway": 31.1,
       "pick": "Monterrey",
-      "sport": "futbol"
+      "extraHome": -2,
+      "extraAway": 5,
+      "sport": "futbol",
+      "detalles": {
+        "formaHome": [
+          "D",
+          "W",
+          "L",
+          "W",
+          "L"
+        ],
+        "formaAway": [
+          "L",
+          "W",
+          "W",
+          "W",
+          "L"
+        ],
+        "lesionesHome": 0,
+        "lesionesAway": 0,
+        "descansoBonusHome": 0,
+        "formaBonusHome": -2,
+        "formaBonusAway": 5,
+        "lesionesBonusHome": 0,
+        "lesionesBonusAway": 0
+      }
     },
     {
       "date": "2026-07-19T01:07:00+00:00",
       "home": "Guadalajara Chivas",
       "away": "Toluca",
-      "winProbHome": 45.2,
-      "drawProb": 24.9,
-      "winProbAway": 30,
+      "homeId": 2278,
+      "awayId": 2281,
+      "winProbHome": 39,
+      "drawProb": 28.7,
+      "winProbAway": 32.3,
       "pick": "Guadalajara Chivas",
-      "sport": "futbol"
+      "extraHome": -34,
+      "extraAway": -7,
+      "sport": "futbol",
+      "detalles": {
+        "formaHome": [
+          "D",
+          "L",
+          "D",
+          "W"
+        ],
+        "formaAway": [
+          "D",
+          "L",
+          "D",
+          "L",
+          "W"
+        ],
+        "lesionesHome": 0,
+        "lesionesAway": 0,
+        "descansoBonusHome": -30,
+        "formaBonusHome": -4,
+        "formaBonusAway": -7,
+        "lesionesBonusHome": 0,
+        "lesionesBonusAway": 0
+      }
     },
     {
       "date": "2026-07-19T03:10:00+00:00",
       "home": "Club Queretaro",
       "away": "Club America",
-      "winProbHome": 34.7,
-      "drawProb": 31.6,
-      "winProbAway": 33.8,
+      "homeId": 2290,
+      "awayId": 2287,
+      "winProbHome": 51.3,
+      "drawProb": 21.2,
+      "winProbAway": 27.5,
       "pick": "Club Queretaro",
-      "sport": "futbol"
+      "extraHome": 41,
+      "extraAway": -7,
+      "sport": "futbol",
+      "detalles": {
+        "formaHome": [
+          "W",
+          "D",
+          "W",
+          "W",
+          "D"
+        ],
+        "formaAway": [
+          "L",
+          "W",
+          "D",
+          "D",
+          "L"
+        ],
+        "lesionesHome": 0,
+        "lesionesAway": 0,
+        "descansoBonusHome": 30,
+        "formaBonusHome": 11,
+        "formaBonusAway": -7,
+        "lesionesBonusHome": 0,
+        "lesionesBonusAway": 0
+      }
     },
     {
       "date": "2026-07-22T01:00:00+00:00",
       "home": "Cruz Azul",
       "away": "Puebla",
-      "winProbHome": 68.7,
-      "drawProb": 18,
-      "winProbAway": 13.3,
+      "homeId": 2295,
+      "awayId": 2291,
+      "winProbHome": 40.1,
+      "drawProb": 28,
+      "winProbAway": 31.9,
       "pick": "Cruz Azul",
-      "sport": "futbol"
+      "extraHome": -25,
+      "extraAway": -5,
+      "sport": "futbol",
+      "detalles": {
+        "formaHome": [
+          "D",
+          "W",
+          "D",
+          "W",
+          "D"
+        ],
+        "formaAway": [
+          "W",
+          "L",
+          "W",
+          "L",
+          "L"
+        ],
+        "lesionesHome": 0,
+        "lesionesAway": 0,
+        "descansoBonusHome": -30,
+        "formaBonusHome": 5,
+        "formaBonusAway": -5,
+        "lesionesBonusHome": 0,
+        "lesionesBonusAway": 0
+      }
     },
     {
       "date": "2026-07-22T03:00:00+00:00",
       "home": "Toluca",
       "away": "U.N.A.M. - Pumas",
-      "winProbHome": 42.1,
-      "drawProb": 26.8,
-      "winProbAway": 31.1,
+      "homeId": 2281,
+      "awayId": 2286,
+      "winProbHome": 47.4,
+      "drawProb": 23.5,
+      "winProbAway": 29.1,
       "pick": "Toluca",
-      "sport": "futbol"
+      "extraHome": 23,
+      "extraAway": -2,
+      "sport": "futbol",
+      "detalles": {
+        "formaHome": [
+          "D",
+          "L",
+          "D",
+          "L",
+          "W"
+        ],
+        "formaAway": [
+          "L",
+          "W",
+          "L",
+          "D",
+          "W"
+        ],
+        "lesionesHome": 0,
+        "lesionesAway": 0,
+        "descansoBonusHome": 30,
+        "formaBonusHome": -7,
+        "formaBonusAway": -2,
+        "lesionesBonusHome": 0,
+        "lesionesBonusAway": 0
+      }
     }
   ],
   "mlb": [],
-  "generatedAt": "2026-07-16T00:14:21.306Z"
+  "generatedAt": "2026-07-16T00:58:22.292Z"
 }

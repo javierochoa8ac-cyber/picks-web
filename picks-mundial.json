@@ -4,20 +4,22 @@
       "home": "France",
       "away": "England",
       "date": "2026-07-18T21:00:00+00:00",
-      "winProbHome": 40.3,
-      "drawProb": 27.9,
-      "winProbAway": 31.8,
+      "winProbHome": 41.6,
+      "drawProb": 27.1,
+      "winProbAway": 31.3,
       "pick": "France",
+      "restBonusHome": 8,
       "sport": "mundial"
     },
     {
       "home": "Spain",
       "away": "Argentina",
       "date": "2026-07-19T19:00:00+00:00",
-      "winProbHome": 39,
-      "drawProb": 28.7,
-      "winProbAway": 32.3,
+      "winProbHome": 40.3,
+      "drawProb": 27.9,
+      "winProbAway": 31.8,
       "pick": "Spain",
+      "restBonusHome": 8,
       "sport": "mundial"
     }
   ]
