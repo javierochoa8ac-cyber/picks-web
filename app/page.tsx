@@ -41,6 +41,7 @@ export default async function Home() {
         <Section title="Liga MX" picks={futbolPicks} />
         <Section title="MLB" picks={mlbPicks} />
 
+        <a href="/como-funciona" className="block text-center text-sm text-emerald-400 hover:text-emerald-300 mb-6">Como funciona el modelo</a>
         <p className="text-xs text-gray-500 text-center mt-10">
           Contenido informativo, no es asesoria financiera. Apostar conlleva riesgo. +18.
         </p>
