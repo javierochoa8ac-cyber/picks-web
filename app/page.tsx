@@ -18,7 +18,7 @@ export default async function Home() {
   const { data: picks, error } = await supabase
     .from('picks')
     .select('*')
-    .order('created_at', { ascending: false })
+    .order('match_date', { ascending: true })
 
   if (error) {
     return <div className="p-8 text-red-600">Error cargando picks: {error.message}</div>
