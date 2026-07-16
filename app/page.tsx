@@ -25,6 +25,7 @@ export default async function Home() {
   }
 
   const allPicks = picks as Pick[]
+  const mundialPicks = allPicks.filter(function (p) { return p.sport === 'mundial' })
   const futbolPicks = allPicks.filter(function (p) { return p.sport === 'futbol' })
   const mlbPicks = allPicks.filter(function (p) { return p.sport === 'mlb' })
 
@@ -36,7 +37,8 @@ export default async function Home() {
           Basado en modelo estadistico Elo, no en promesas de ganancia
         </p>
 
-        <Section title="Futbol" picks={futbolPicks} />
+        <Section title="Mundial 2026" picks={mundialPicks} />
+        <Section title="Liga MX" picks={futbolPicks} />
         <Section title="MLB" picks={mlbPicks} />
 
         <p className="text-xs text-gray-500 text-center mt-10">
