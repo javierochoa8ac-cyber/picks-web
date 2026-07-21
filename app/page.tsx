@@ -12,6 +12,9 @@ type Pick = {
   win_prob_away: number
   pick: string
   match_date: string
+  cuota: number | null
+  ganancia: number | null
+  resultado_real: string | null
 }
 
 export default async function Home() {
@@ -39,6 +42,7 @@ export default async function Home() {
 
         <Section title="Mundial 2026" picks={mundialPicks} />
         <Section title="Liga MX" picks={futbolPicks} />
+        <ResultadoApuestas picks={futbolPicks} />
         <Section title="MLB" picks={mlbPicks} />
 
         <a href="/como-funciona" className="block text-center text-sm text-emerald-400 hover:text-emerald-300 mb-6">Como funciona el modelo</a>
@@ -73,6 +77,54 @@ function Section({ title, picks }: { title: string; picks: Pick[] }) {
                 {p.draw_prob ? <span>Empate {p.draw_prob}%</span> : null}
                 <span>Visitante {p.win_prob_away}%</span>
               </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+function ResultadoApuestas({ picks }: { picks: Pick[] }) {
+  const settled = picks.filter(function (p) { return p.ganancia !== null && p.ganancia !== undefined })
+  if (settled.length === 0) return null
+
+  const total = settled.reduce(function (acc, p) { return acc + Number(p.ganancia) }, 0)
+  const aciertos = settled.filter(function (p) { return Number(p.ganancia) > 0 }).length
+  const apostado = settled.length * 100
+  const isPositive = total >= 0
+
+  return (
+    <div className="mb-8">
+      <h2 className="text-lg font-medium mb-3 text-gray-300">Si hubieras apostado $100 por partido</h2>
+      <p className="text-xs text-gray-500 mb-3">Cuotas reales de casas de apuestas, capturadas por partido. Liga MX.</p>
+
+      <div className="bg-gray-900 border border-gray-800 rounded-xl p-5 mb-3">
+        <div className="flex justify-between items-center mb-3">
+          <span className="text-gray-400 text-sm">Acumulado</span>
+          <span className={'text-2xl font-semibold ' + (isPositive ? 'text-emerald-400' : 'text-red-400')}>
+            {isPositive ? '+' : ''}${total.toFixed(0)}
+          </span>
+        </div>
+        <div className="flex justify-between text-xs text-gray-500 border-t border-gray-800 pt-3">
+          <span>{aciertos} de {settled.length} acertados</span>
+          <span>${apostado} apostados en total</span>
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        {settled.slice().reverse().map(function (p) {
+          const gan = Number(p.ganancia)
+          const ganPositive = gan > 0
+          return (
+            <div key={p.id} className="bg-gray-900/50 border border-gray-800 rounded-lg px-4 py-3 flex justify-between items-center text-sm">
+              <div>
+                <div className="text-gray-200">{p.home} vs {p.away}</div>
+                <div className="text-xs text-gray-500">Pick: {p.pick} @ {p.cuota}</div>
+              </div>
+              <span className={'font-medium ' + (ganPositive ? 'text-emerald-400' : 'text-red-400')}>
+                {ganPositive ? '+' : ''}${gan.toFixed(0)}
+              </span>
             </div>
           )
         })}
