@@ -99,11 +99,8 @@ async function getRecentForm(teamId) {
   }
 }
 
-async function actualizarRatingsConHistorial(ratings, leagueId, season, kFactor, homeAdv) {
-  const jugados = await apiRequest('/fixtures', { league: leagueId, season: season, status: 'FT' })
-  jugados.sort(function (a, b) { return new Date(a.fixture.date) - new Date(b.fixture.date) })
-
-  jugados.forEach(function (f) {
+function actualizarRatingsConHistorial(ratings, jugadosOrdenados, kFactor, homeAdv) {
+  jugadosOrdenados.forEach(function (f) {
     const home = f.teams.home.name
     const away = f.teams.away.name
     const gh = f.goals.home
@@ -125,6 +122,38 @@ async function actualizarRatingsConHistorial(ratings, leagueId, season, kFactor,
   return ratings
 }
 
+async function actualizarResultadosYGanancias(jugados) {
+  for (const f of jugados) {
+    const gh = f.goals.home
+    const ga = f.goals.away
+    if (gh === null || ga === null) continue
+
+    let resultado
+    if (gh > ga) resultado = f.teams.home.name
+    else if (gh < ga) resultado = f.teams.away.name
+    else resultado = 'empate'
+
+    const { data: existing } = await supabase
+      .from('picks')
+      .select('id, pick, cuota, ganancia, resultado_real')
+      .eq('fixture_id', f.fixture.id)
+      .maybeSingle()
+
+    if (!existing) continue
+
+    const updates = {}
+    if (!existing.resultado_real) updates.resultado_real = resultado
+    if (existing.cuota && existing.ganancia === null) {
+      const acerto = existing.pick === resultado
+      updates.ganancia = acerto ? Math.round((100 * (existing.cuota - 1)) * 100) / 100 : -100
+    }
+
+    if (Object.keys(updates).length > 0) {
+      await supabase.from('picks').update(updates).eq('id', existing.id)
+    }
+  }
+}
+
 export async function GET(request) {
   const authHeader = request.headers.get('authorization')
   if (authHeader !== 'Bearer ' + process.env.CRON_SECRET) {
@@ -136,8 +165,13 @@ export async function GET(request) {
   const homeAdv = 60
   const kFactor = 20
 
+  const jugados = await apiRequest('/fixtures', { league: leagueId, season: season, status: 'FT' })
+  jugados.sort(function (a, b) { return new Date(a.fixture.date) - new Date(b.fixture.date) })
+
   let ratings = await loadRatings('futbol')
-  ratings = await actualizarRatingsConHistorial(ratings, leagueId, season, kFactor, homeAdv)
+  ratings = actualizarRatingsConHistorial(ratings, jugados, kFactor, homeAdv)
+
+  await actualizarResultadosYGanancias(jugados)
 
   const from = new Date().toISOString().slice(0, 10)
   const toDate = new Date()
@@ -157,6 +191,7 @@ export async function GET(request) {
     const prediction = predictMatch(ratings, home, away, homeAdv, extraHome, extraAway)
     picks.push({
       sport: 'futbol',
+      fixture_id: f.fixture.id,
       home: home,
       away: away,
       win_prob_home: prediction.winProbHome,
@@ -167,9 +202,8 @@ export async function GET(request) {
     })
   }
 
-  await supabase.from('picks').delete().eq('sport', 'futbol')
   if (picks.length > 0) {
-    await supabase.from('picks').insert(picks)
+    await supabase.from('picks').upsert(picks, { onConflict: 'fixture_id' })
   }
   await saveRatings('futbol', ratings)
 
